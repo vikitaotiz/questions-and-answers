@@ -26,7 +26,7 @@ class QuestionsController extends Controller
      */
     public function create()
     {
-        //
+        return view('questions.create');
     }
 
     /**
@@ -48,7 +48,9 @@ class QuestionsController extends Controller
      */
     public function show($id)
     {
-        //
+        $question = Question::find($id);
+
+        return view('questions.show')->with('question', $question);
     }
 
     /**
